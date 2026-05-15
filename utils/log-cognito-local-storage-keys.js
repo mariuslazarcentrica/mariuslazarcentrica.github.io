@@ -6,7 +6,10 @@
  * Usage: paste or run this script in the browser DevTools console.
  */
 (() => {
+  const PREFIX = '[log-cognito-local-storage-keys]';
+  console.log(`${PREFIX} START`);
   Object.keys(localStorage)
     .filter(key => key.startsWith('CognitoIdentityServiceProvider'))
-    .forEach(key => console.log(`${key}:`, localStorage.getItem(key)));
+    .forEach(key => console.log(`${PREFIX} ${key}:`, localStorage.getItem(key)));
+  console.log(`${PREFIX} END`);
 })();
